@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --vital-green: #00b26f;
+    --clarity-blue: #0073e6;
+    --deep-teal-blue: #036091;
+    --vibrant-azure: #016dad;
+    --spark-yellow: #ffc400;
+    --soft-white: #fdfcf9;
+  }
+}
+
+@layer utilities {
+  .bg-vital-green {
+    background-color: var(--vital-green);
+  }
+  .bg-clarity-blue {
+    background-color: var(--clarity-blue);
+  }
+  .bg-deep-teal-blue {
+    background-color: var(--deep-teal-blue);
+  }
+  .bg-vibrant-azure {
+    background-color: var(--vibrant-azure);
+  }
+  .bg-spark-yellow {
+    background-color: var(--spark-yellow);
+  }
+  .bg-soft-white {
+    background-color: var(--soft-white);
+  }
+
+  .text-vital-green {
+    color: var(--vital-green);
+  }
+  .text-clarity-blue {
+    color: var(--clarity-blue);
+  }
+  .text-deep-teal-blue {
+    color: var(--deep-teal-blue);
+  }
+  .text-vibrant-azure {
+    color: var(--vibrant-azure);
+  }
+  .text-spark-yellow {
+    color: var(--spark-yellow);
+  }
+
+  .border-vital-green {
+    border-color: var(--vital-green);
+  }
+  .border-clarity-blue {
+    border-color: var(--clarity-blue);
+  }
+  .border-deep-teal-blue {
+    border-color: var(--deep-teal-blue);
+  }
+  .border-vibrant-azure {
+    border-color: var(--vibrant-azure);
+  }
+  .border-spark-yellow {
+    border-color: var(--spark-yellow);
+  }
+}
