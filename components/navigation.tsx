@@ -16,7 +16,6 @@ import {
   CreditCard,
   LogOut,
   UserPlus,
-  Gift,
   UsersIcon,
   BookOpen,
   ChevronDown,
@@ -31,9 +30,19 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useToast } from "@/hooks/use-toast"
 
 export function Navigation() {
   const pathname = usePathname()
+  const { toast } = useToast()
+
+  const showMockToast = () => {
+    toast({
+      title: "Mock Feature",
+      description: "You've clicked a mock button! This menu will work in the full build.",
+      duration: 3000,
+    })
+  }
 
   const mainTabs = [
     { href: "/", label: "Home", icon: Home, enabled: true },
@@ -96,13 +105,14 @@ export function Navigation() {
                   )
                 } else {
                   return (
-                    <div
+                    <button
                       key={tab.href}
+                      onClick={showMockToast}
                       className="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 cursor-pointer transition-colors"
                     >
                       <Icon className="w-4 h-4" />
                       <span>{tab.label}</span>
-                    </div>
+                    </button>
                   )
                 }
               })}
@@ -123,7 +133,11 @@ export function Navigation() {
                   {moreItems.map((item) => {
                     const Icon = item.icon
                     return (
-                      <DropdownMenuItem key={item.href} className="flex items-center space-x-2 cursor-pointer">
+                      <DropdownMenuItem
+                        key={item.href}
+                        className="flex items-center space-x-2 cursor-pointer"
+                        onClick={showMockToast}
+                      >
                         <Icon className="w-4 h-4" />
                         <span>{item.label}</span>
                       </DropdownMenuItem>
@@ -168,7 +182,7 @@ export function Navigation() {
                   </DropdownMenuItem>
                 </div>
                 <div className="p-3 border-t">
-                  <Button variant="ghost" size="sm" className="w-full text-xs">
+                  <Button variant="ghost" size="sm" className="w-full text-xs" onClick={showMockToast}>
                     View all notifications
                   </Button>
                 </div>
@@ -202,7 +216,7 @@ export function Navigation() {
                   </DropdownMenuItem>
                 </div>
                 <div className="p-3 border-t">
-                  <Button variant="ghost" size="sm" className="w-full text-xs">
+                  <Button variant="ghost" size="sm" className="w-full text-xs" onClick={showMockToast}>
                     View all messages
                   </Button>
                 </div>
@@ -224,14 +238,21 @@ export function Navigation() {
                 {profileItems.map((item) => {
                   const Icon = item.icon
                   return (
-                    <DropdownMenuItem key={item.href} className="flex items-center space-x-2 cursor-pointer">
+                    <DropdownMenuItem
+                      key={item.href}
+                      className="flex items-center space-x-2 cursor-pointer"
+                      onClick={showMockToast}
+                    >
                       <Icon className="w-4 h-4" />
                       <span>{item.label}</span>
                     </DropdownMenuItem>
                   )
                 })}
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="flex items-center space-x-2 cursor-pointer text-red-600">
+                <DropdownMenuItem
+                  className="flex items-center space-x-2 cursor-pointer text-red-600"
+                  onClick={showMockToast}
+                >
                   <LogOut className="w-4 h-4" />
                   <span>Log Out</span>
                 </DropdownMenuItem>

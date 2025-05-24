@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "off-white": "#F2F0EF"
+        "off-white": "#F2F0EF",
         "vital-green": "#00B26F",
         "clarity-blue": "#0073E6",
         "deep-teal-blue": "#036091",
