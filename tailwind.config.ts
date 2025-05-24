@@ -8,6 +8,22 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "bg-soft-white",
+    "bg-vital-green",
+    "rounded-md",
+    "rounded-lg",
+    "rounded-xl",
+    "text-white",
+    "text-vital-green",
+    "p-4",
+    "pt-16",
+    "min-h-screen",
+    "bg-off-white",
+    "hover:bg-vital-green",
+    "text-lg",
+    // Add any other utility classes that might be dynamically generated or critical
+  ],
   theme: {
     extend: {
       colors: {
